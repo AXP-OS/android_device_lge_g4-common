@@ -66,5 +66,8 @@ allow init sysfs_dm:file { open write };
 allow init persist_data_file:dir mounton;
 allow init block_device:blk_file write;
 
+# pulse.sh
+allow init system_file:file execute_no_trans;
+
 dontaudit init bluetooth:process transition;
 dontaudit init btnvtool_exec:file execute_no_trans;

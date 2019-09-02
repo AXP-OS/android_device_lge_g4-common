@@ -5,7 +5,7 @@
 #
 ##############################################
 
-INTERVALL=1.5s
+INTERVALL=1s
 
 F_ON(){
     echo 0 > /sys/class/leds/green/brightness
@@ -23,7 +23,7 @@ F_RESET(){
     # reset when needed ONLY. Ensures a valid new led color does not get overwritten (e.g. battery state)
     # F_ON specifices green as 0 so do never reset it here
     grep -q 127 /sys/class/leds/blue/brightness && echo 0 > /sys/class/leds/blue/brightness
-    egrep -q "200|255" /sys/class/leds/red/brightness && echo 0 > /sys/class/leds/red/brightness
+    grep -q 255 /sys/class/leds/red/brightness && echo 0 > /sys/class/leds/red/brightness
     return 0
 }
 
