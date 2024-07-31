@@ -491,10 +491,11 @@
         </interface>
     </hal>
     <hal format="aidl">
+        <transport>hwbinder</transport>
         <name>android.system.keystore2</name>
         <interface>
             <name>IKeystoreService</name>
-	    <instance>default</instance>
+            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl">
