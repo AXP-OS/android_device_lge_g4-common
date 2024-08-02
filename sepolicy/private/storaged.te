@@ -1,1 +1,3 @@
 allow storaged sysfs:file { getattr open read };
+allow storaged debugfs_mmc:file { read };
+allow storaged debugfs_mmc:dir { search };
