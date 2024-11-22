@@ -19,6 +19,7 @@
 # late mounts
 # note: f2fs will not mount with errors=panic and/or barrier=1
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/userdata     /data           f2fs    noatime,nosuid,nodev,nodiratime,inline_xattr,discard                           wait,check,forceencrypt=/dev/block/platform/soc.0/f9824900.sdhci/by-name/encrypt,latemount
+#/dev/block/platform/soc.0/f9824900.sdhci/by-name/userdata     /data           f2fs    noatime,nosuid,nodev,nodiratime,inline_xattr,discard                           wait,check,encryptable=/dev/block/platform/soc.0/f9824900.sdhci/by-name/encrypt,latemount
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/sns          /sns            ext4    nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue,user_xattr      wait,notrim,check,latemount
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/drm          /persist-lg     ext4    nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue,user_xattr      wait,notrim,check,latemount
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/mpt          /mpt            ext4    nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue,user_xattr      wait,notrim,check,latemount
@@ -26,7 +27,7 @@
 # H812, H815, H818, H819, F500 uses /cust
 # LS991, H810, H811, US991, VS986 uses /carrier
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/cust       /mnt/vendor/cust     ext4    nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue,journal_async_commit,user_xattr,discard      wait,check,latemount
-/dev/block/platform/soc.0/f9824900.sdhci/by-name/carrier    /mnt/vendor/cust     ext4    nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue,journal_async_commit,user_xattr,discard      wait,check,latemount
+#/dev/block/platform/soc.0/f9824900.sdhci/by-name/carrier    /mnt/vendor/cust     ext4    nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue,journal_async_commit,user_xattr,discard      wait,check,latemount
 
 # recovery / emmc which won't get mounted
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/boot         /boot           emmc    defaults     recoveryonly
