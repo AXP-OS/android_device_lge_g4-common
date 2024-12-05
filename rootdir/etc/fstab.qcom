@@ -17,11 +17,12 @@
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/persist      /persist        ext4    nosuid,nodev,barrier=1,data=ordered,nodelalloc,errors=panic,user_xattr       wait,notrim,check,first_stage_mount
 # sensors.qcomd requires access to /sns/cal/sns.reg during boot
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/sns          /sns            ext4    nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue,user_xattr      wait,notrim,check,first_stage_mount
+# encryption info, properties during boot
+/dev/block/platform/soc.0/f9824900.sdhci/by-name/drm          /persist-lg     ext4    nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue,user_xattr      wait,notrim,check,first_stage_mount
 
 # late mounts
 # note: f2fs will not mount with errors=panic and/or barrier=1
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/userdata     /data           f2fs    noatime,nosuid,nodev,nodiratime,inline_xattr,discard                           wait,check,forceencrypt=/dev/block/platform/soc.0/f9824900.sdhci/by-name/encrypt,latemount
-/dev/block/platform/soc.0/f9824900.sdhci/by-name/drm          /persist-lg     ext4    nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue,user_xattr      wait,notrim,check,latemount
 /dev/block/platform/soc.0/f9824900.sdhci/by-name/mpt          /mpt            ext4    nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue,user_xattr      wait,notrim,check,latemount
 
 # recovery / emmc which won't get mounted
