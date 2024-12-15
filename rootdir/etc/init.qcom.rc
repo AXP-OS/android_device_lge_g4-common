@@ -1025,7 +1025,19 @@ service qcom-usb-sh /vendor/bin/init.qcom.usb.sh
 # sys.qcamerasvr.ready=1 can be used to start depending services
 # like vendor.camera-provider-2-4-ext and vendor.camera-provider-2-4
 
-on property:sys.camerasetup.ready=1
+# when encrypting
+on property:vold.decrypt=trigger_shutdown_framework
+    stop qcamerasvr
+
+# when unencrypted
+on property:sys.camerasetup.ready=1 && property:ro.crypto.state=unencrypted
+    start qcamerasvr
+    setprop sys.qcamerasvr.ready 1
+
+# after decrypted
+on property:sys.camerasetup.ready=1 && property:vold.decrypt=trigger_restart_framework
+    stop qcamerasvr
+    setprop sys.qcamerasvr.ready 0
     start qcamerasvr
     setprop sys.qcamerasvr.ready 1
 

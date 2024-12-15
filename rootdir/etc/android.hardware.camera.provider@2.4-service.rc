@@ -1,6 +1,15 @@
+on property:sys.qcamerasvr.ready=0
+    stop vendor.camera-provider-2-4-ext
+    stop vendor.camera-provider-2-4
+
 on property:sys.qcamerasvr.ready=1
     start vendor.camera-provider-2-4-ext
     start vendor.camera-provider-2-4
+
+# when encrypting
+on property:vold.decrypt=trigger_shutdown_framework
+    stop vendor.camera-provider-2-4-ext
+    stop vendor.camera-provider-2-4
 
 # set correct user, set proper primary group
 service vendor.camera-provider-2-4 /vendor/bin/hw/android.hardware.camera.provider@2.4-service
