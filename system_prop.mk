@@ -103,7 +103,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # 196610 is decimal for 0x30002 to report major/minor versions as 3/2
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.mdpcomp.logs=0 \
-    persist.debug.wfd.enable=1 \
+    persist.debug.wfd.enable=0 \
     persist.demo.hdmirotationlock=false \
     persist.hwc.enable_vds=1 \
     persist.hwc.mdpcomp.enable=true \
@@ -126,8 +126,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.gps.qc_nlp_in_use=1 \
-    persist.loc.nlp_name=com.qualcomm.services.location \
+    persist.gps.qc_nlp_in_use=0 \
     ro.gps.agps_provider=1 \
     ro.qc.sdk.izat.premium_enabled=0 \
     ro.qc.sdk.izat.service_mask=0x0
