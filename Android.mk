@@ -60,7 +60,7 @@ $(DXHDCP2_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@rm -rf $@
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(DXHDCP2_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += 
 
 KEYMASTER_IMAGES := \
     keymaste.b00 keymaste.b01 keymaste.b02 keymaste.b03 keymaste.mdt
