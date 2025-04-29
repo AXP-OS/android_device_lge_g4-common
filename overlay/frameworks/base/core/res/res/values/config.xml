@@ -255,7 +255,6 @@
     </string-array>
 
     <!-- Keep chosen default camera app pinned in memory for faster launching -->
-    <bool name="config_pinnerCameraApp">false</bool>
 
     <!-- Should the pinner service pin the Home application? -->
     <bool name="config_pinnerHomeApp">false</bool>
@@ -276,7 +275,7 @@
          * The remote submix module "audio.r_submix.default" must be installed on the device.
          * The device must be provisioned with HDCP keys (for protected content).
     -->
-    <bool name="config_enableWifiDisplay">true</bool>
+    <bool name="config_enableWifiDisplay">false</bool>
 
     <!-- Set to true if the wifi display supports compositing content stored
          in gralloc protected buffers.  For this to be true, there must exist
@@ -299,7 +298,6 @@
     <bool name="config_ui_enableFadingMarquee">false</bool>
 
     <!-- Wifi driver supports batched scan -->
-    <bool translatable="false" name="config_wifi_batched_scan_supported">true</bool>
 
     <!-- MMS user agent string -->
     <string name="config_mms_user_agent" translatable="false">Nexus5</string>
@@ -360,7 +358,6 @@
     <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
 
     <!-- Flag indicating which package name can access the persistent data partition -->
-    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
 
     <!-- Full screen aspect ratio -->
     <item name="config_screenAspectRatio" format="float" type="dimen">1.778</item>
@@ -385,16 +382,16 @@
         <item>SUPL_VER=0x20000</item>
         <item>SUPL_MODE=1</item>
         <item>SUPL_ES=1</item>
-        <item>LPP_PROFILE=3</item>
+        <item>LPP_PROFILE=0</item>
         <item>USE_EMERGENCY_PDN_FOR_EMERGENCY_SUPL=1</item>
         <item>A_GLONASS_POS_PROTOCOL_SELECT=0x4</item>
         <item>GPS_LOCK=0x2</item>
         <item>XTRA_SERVER_QUERY=0</item>
         <!-- XTRA servers are still ignored due to libizat_core.so which is needed and have izatcloud.net hardcoded inside -->
-        <item>XTRA_SERVER_1=https://xtra.gpsonextra.net/xtra3grc.bin</item>
-        <item>XTRA_SERVER_2=https://xtra1.gpsonextra.net/xtra3grc.bin</item>
-        <item>XTRA_SERVER_3=https://xtra2.gpsonextra.net/xtra3grc.bin</item>
-        <item>XTRA_SERVER_4=https://xtra3.gpsonextra.net/xtra3grc.bin</item>
+        <item>XTRA_SERVER_1=https://xtrapath.izatcloud.net/xtra3grc.bin</item>
+        <item>XTRA_SERVER_2=https://xtrapath4.izatcloud.net/xtra3grc.bin</item>
+        <item>XTRA_SERVER_3=https://xtrapath5.izatcloud.net/xtra3grc.bin</item>
+        <item>XTRA_SERVER_4=https://xtrapath6.izatcloud.net/xtra3grc.bin</item>
     </string-array>
 
 <!-- Begin: Doze mode -->
