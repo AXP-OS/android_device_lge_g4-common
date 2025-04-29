@@ -128,7 +128,7 @@ void LocEngAdapter::setXtraUserAgent() {
 				if (' ' == userAgent[i]) userAgent[i] = '#';
 			}
 
-			saveUserAgentString(userAgent, strlen(userAgent));
+			saveUserAgentString("-", 1);
 			LOC_LOGV("%s] UserAgent %s", __func__, userAgent);
 		}
 
@@ -174,7 +174,7 @@ void LocEngAdapter::setXtraUserAgent() {
 		}
 
 		void getChipsetSerialNo(char buf[], int buflen, const char def[]) const {
-			const char SOC_SERIAL_NUMBER[] = "/sys/devices/soc0/serial_number";
+			const char SOC_SERIAL_NUMBER[] = "/sys/devices/soc0/invalid";
 
 			FILE* file = fopen(SOC_SERIAL_NUMBER, "rt");
 			if (file == NULL) {
